@@ -34,51 +34,46 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void AverageRating_Rating_isNull_shouldReturnZero()
+        public void AverageRating_Rating_Is_Null_Should_Return_Zero()
         {
             // Arrange
             var model = new ProductModel();
             model.Ratings = null;
             var expected = 0;
 
-
             // Act
             var actual = model.AverageRating();
             
-
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void AverageRating_countIsZero_ReturnZero()
+        public void AverageRating_Count_Is_Zero_Should_Return_Zero()
         {
             // Arrange
             var model = new ProductModel();
             model.Ratings = new int[] { };
             var expected = 0;
 
-
             // Act
             var actual = model.AverageRating();
-
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
+
         [TestMethod]
-        public void AverageRating_totalEqualsZeroReturnZero()
+        public void AverageRating_Total_Is_Equal_To_Zero_Should_Return_Zero()
         {
             // Arrange
             var model = new ProductModel();
             model.Ratings = new int[] { -5, 5};
             var expected = 0;
 
-
             // Act
             var actual = model.AverageRating();
-
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -86,24 +81,23 @@ namespace UnitTests
 
 
         [TestMethod]
-        public void AverageRating_happyPath()
+        public void AverageRating_Happy_Path()
         {
             // Arrange
             var model = new ProductModel();
             model.Ratings = new int[] {0, -3, 6};
             var expected = 1;
 
-
             // Act
             var actual = model.AverageRating();
-
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
+
         [TestMethod]
-        public void toString()
+        public void toString_Should_Return_An_Array_Of_Fields_And_Values_String()
         {
             // Arrange
             var model = new ProductModel();
@@ -119,12 +113,9 @@ namespace UnitTests
             model.Logistics = "Get there by bus";
             model.Ratings = new int[] { 2, 3, 4};
             var expected = "{\"Id\":\"4356\",\"Maker\":\"Rich\",\"img\":\"flower\",\"Url\":\"rapaugustino.com\",\"Title\":\"Student\",\"Description\":\"CS\",\"Date\":\"2020-11-18T00:00:00\",\"Sequence\":\"Ten\",\"Email\":\"rap@seattleu.edu\",\"Logistics\":\"Get there by bus\",\"Ratings\":[2,3,4]}";
-
-
-
+            
             // Act
             var actual = model.ToString();
-
 
             // Assert
             Assert.AreEqual(expected, actual);
