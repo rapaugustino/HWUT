@@ -121,7 +121,6 @@ namespace UnitTests
             var expected = "{\"Id\":\"4356\",\"Maker\":\"Rich\",\"img\":\"flower\",\"Url\":\"rapaugustino.com\",\"Title\":\"Student\",\"Description\":\"CS\",\"Date\":\"2020-11-18T00:00:00\",\"Sequence\":\"Ten\",\"Email\":\"rap@seattleu.edu\",\"Logistics\":\"Get there by bus\",\"Ratings\":[2,3,4]}";
 
 
-
             // Act
             var actual = model.ToString();
 
